@@ -2,7 +2,6 @@
 
 ## Descrição
 
-Projeto final para o projeto integrado III para adquirir o título de assistente de desenvolvimento de sistemas.
 Um sistema de administração de entregas é uma plataforma que otimiza a logística de entrega de produtos e serviços. Ele oferece recursos como rastreamento de pedidos, agendamento de entregas e roteirização inteligente para maximizar a eficiência. Os clientes podem fazer pedidos, acompanhar o status das entregas. O sistema também gerencia a frota de  motoristas, garantindo a alocação adequada de recursos.
 
 ## Status do projeto (em desenvolvimento)
