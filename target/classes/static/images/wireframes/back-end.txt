@@ -1,0 +1,9 @@
+colunas das tabelas
+pedidos:
+nome dataDeEntrega motoboy cliente logradouro cep número descriçãoObjeto
+
+motoboys:
+nome cpf celular moto, placa, ações
+
+clientes:
+nome cpf telefone logradouro numero complemento ações

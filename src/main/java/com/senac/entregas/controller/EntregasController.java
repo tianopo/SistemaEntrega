@@ -17,4 +17,10 @@ public class EntregasController {
         model.addAttribute("pagina", "motoboy");
         return "index";
     }
+    
+    @GetMapping("/cliente")
+    public String cliente(Model model){
+        model.addAttribute("pagina", "cliente");
+        return "index";
+    }
 }
