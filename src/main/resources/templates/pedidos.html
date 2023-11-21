@@ -8,7 +8,7 @@
 </head>
 <body>
     <main class="mx-5 gap-3">
-        <img src="../static/images/capacete.png" class="border border-black img-fluid" alt="Um banner" />
+        <img th:src="@{/images/delivery.jpg}" class="border border-black img-fluid mt-3" alt="Um banner" />
         <div class="border border-black p-2 mt-3">
             <div class="d-flex flex-column">
                 <h5>Contadores de Pedido</h5>
@@ -33,7 +33,7 @@
             <div class="d-flex flex-wrap justify-content-between">
                 <div class="mb-4">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
+                    <input type="text" class="form-control" id="nome">
                 </div>
                 <div>
                     <label for="data" class="form-label">Data de Entrega</label>
@@ -64,11 +64,11 @@
                 <div class="d-flex flex-row gap-3">
                     <div>
                         <label for="cep" class="form-label">Cep</label>
-                        <input type="text" class="form-control" style="width: 130px;" id="cep" placeholder="XX.XXX-XXX">
+                        <input type="text" class="form-control" style="width: 130px;" id="cep">
                     </div>
                     <div>
                         <label for="numero" class="form-label">Número</label>
-                        <input type="text" class="form-control" style="width: 70px;" id="numero" placeholder="XXX">
+                        <input type="text" class="form-control" style="width: 70px;" id="numero">
                     </div>
                 </div>
                 <div class="w-100 d-flex align-items-end justify-content-between">
@@ -116,8 +116,9 @@
             </table>
         </div>
     </main>
-    <script src="../static/js/jquery-3.7.1.js"></script>
-    <script src="../static/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../static/js/clienteMascara.js"></script>
+    <script th:src="@{/js/jquery-3.7.1.js}"></script>
+    <script th:src="@{/js/bootstrap/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/jquery.mask.min.js}"></script>
+    <script th:src="@{/js/pedidoMascara.js}"></script>
 </body>
 </html>

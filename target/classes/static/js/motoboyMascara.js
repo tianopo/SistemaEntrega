@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    alert('Esta é uma função anônima!!');
     // Máscara para o CPF
     $('#cpf').mask('000.000.000-00', { reverse: true, placeholder: '___.___.___-__' });
 
@@ -16,12 +15,14 @@ $(document).ready(function () {
     });
 
     // Restrição do campo Moto (até 100 caracteres)
+    $('#moto').attr('placeholder', 'Honda Biz 110i');
     $('#moto').on('input', function () {
       var sanitized = $(this).val().substring(0, 100);
       $(this).val(sanitized);
     });
 
     // Restrição do campo Placa (até 7 caracteres)
+    $('#placa').attr('placeholder', 'XXXXXXX');
     $('#placa').on('input', function () {
       var sanitized = $(this).val().substring(0, 7);
       $(this).val(sanitized.toUpperCase());

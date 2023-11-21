@@ -1,4 +1,6 @@
-import com.senac.entregas.controller.EntregasController;
+import com.senac.entregas.controller.ClienteController;
+import com.senac.entregas.controller.MotoboyController;
+import com.senac.entregas.controller.PedidoController;
 import java.util.Collection;
 import org.junit.jupiter.api.Test;
 import org.springframework.ui.Model;
@@ -9,7 +11,7 @@ public class EntregasControllerTest {
 
     @Test
     public void testHome() {
-        EntregasController controller = new EntregasController();
+        PedidoController controller = new PedidoController();
         Model model = new ModelStub();
 
         String result = controller.home(model);
@@ -20,7 +22,7 @@ public class EntregasControllerTest {
 
     @Test
     public void testMotoboy() {
-        EntregasController controller = new EntregasController();
+        MotoboyController controller = new MotoboyController();
         Model model = new ModelStub();
 
         String result = controller.motoboy(model);
@@ -31,7 +33,7 @@ public class EntregasControllerTest {
 
     @Test
     public void testCliente() {
-        EntregasController controller = new EntregasController();
+        ClienteController controller = new ClienteController();
         Model model = new ModelStub();
 
         String result = controller.cliente(model);

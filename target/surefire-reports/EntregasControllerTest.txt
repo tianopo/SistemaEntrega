@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: EntregasControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s - in EntregasControllerTest
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.148 s <<< FAILURE! - in EntregasControllerTest
+testMotoboy  Time elapsed: 0.056 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "com.senac.entregas.service.MotoboyService.listarTodosMotoboys()" because "this.motoboyService" is null
+	at EntregasControllerTest.testMotoboy(EntregasControllerTest.java:28)
+
