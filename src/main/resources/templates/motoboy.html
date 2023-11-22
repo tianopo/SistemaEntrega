@@ -25,23 +25,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Ruan</th>
-                <td>339.448.788-13</td>
-                <td>19/07/1997</td>
-                <td>12982457809</td>
-                <td>Honda Biz 110i</td>
-                <td>TYA4G89</td>
-                <td><button class="btn btn-light text-danger">&#x2612;</button></td>
-              </tr>
-              <tr>
-                <th scope="row">Bruna</th>
-                <td>039.428.788-13</td>
-                <td>19/07/1997</td>
-                <td>12982455709</td>
-                <td>Yamaha CG 150</td>
-                <td>ABA4R80</td>
-                <td><button class="btn btn-light text-danger">&#x2612;</button></td>
+              <tr th:each="motoboy : ${listarMotoboy}">
+                <td>
+                        <span th:text="${motoboy.nome}"></span>
+                </td>
+                <td th:text="${motoboy.cpf}"></td>
+                <td th:text="${motoboy.dataNascimento}"></td>
+                <td th:text="${motoboy.telefone}"></td>
+                <td th:text="${motoboy.moto}"></td>
+                <td th:text="${motoboy.placa}"></td>
+                <td>
+                    <button class="btn btn-danger text-danger">
+                        <a th:href="@{/deletarMotoboy/{id}(id=${motoboy.id})}" class="btn btn-danger">&#x2612;</a>
+                    </button>
+                </td>
               </tr>
             </tbody>
         </table>
@@ -49,42 +46,50 @@
     </main>
     <div class="modal fade" id="motoboyModal" tabindex="-1" aria-labelledby="motoboyModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="motoboyModalLabel">Motoboy</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="motoboyModalLabel">Motoboy</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" th:action="@{/salvarMotoboy}" th:object="${motoboyAdicionar}" class="d-flex flex-row gap-3 flex-wrap" method="POST">
+                        <div class="mb-4">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" th:field="*{nome}">
+                            <span class="text-danger" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="cpf" th:field="*{cpf}">
+                            <span class="text-danger" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="dataNascimento" th:field="*{dataNascimento}">
+                            <span class="text-danger" th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" th:field="*{telefone}">
+                            <span class="text-danger" th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label for="moto" class="form-label">Moto</label>
+                            <input type="text" class="form-control" id="moto" th:field="*{moto}">
+                            <span class="text-danger" th:if="${#fields.hasErrors('moto')}" th:errors="*{moto}"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label for="placa" class="form-label">Placa</label>
+                            <input type="text" class="form-control" id="placa" th:field="*{placa}">
+                            <span class="text-danger" th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}"></span>
+                        </div>
+                        <div class="mb-4 d-flex align-items-end gap-3">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span class="fs-5">&#x21e6;</span> Voltar</button>
+                            <button type="submit" class="btn btn-dark p-2">Enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="modal-body d-flex flex-row gap-3 flex-wrap">
-                <div class="mb-4">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
-                </div>
-                <div class="mb-4">
-                    <label for="cpf" class="form-label">CPF</label>
-                    <input type="text" class="form-control" id="cpf">
-                </div>
-                <div class="mb-4">
-                    <label for="nascimento" class="form-label">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="nascimento">
-                </div>
-                <div class="mb-4">
-                    <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" id="telefone">
-                </div>
-                <div class="mb-4">
-                    <label for="moto" class="form-label">Moto</label>
-                    <input type="text" class="form-control" id="moto">
-                </div>
-                <div class="mb-4">
-                    <label for="placa" class="form-label">Placa</label>
-                    <input type="text" class="form-control" id="placa">
-                </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><span class="fs-5">&#x21e6;</span> Voltar</button>
-              <button type="button" class="btn btn-dark p-2">Enviar</button>
-            </div>
-          </div>
         </div>
     </div>
     <script th:src="@{/js/jquery-3.7.1.js}"></script>
