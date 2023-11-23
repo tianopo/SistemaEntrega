@@ -22,7 +22,7 @@
                 <th scope="col">Número</th>
                 <th scope="col">CEP</th>
                 <th scope="col">Complemento</th>
-                <th scope="col">Ações</th>
+                <th scope="col">Excluir</th>
               </tr>
             </thead>
             <tbody>
@@ -56,7 +56,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" th:action="@{/salvarCliente}" th:object="${cliente}"class="d-flex flex-row gap-3 flex-wrap" method="POST">
+                <form action="#" th:action="@{/salvarCliente}" th:object="${cliente}" class="d-flex flex-row gap-3 flex-wrap" method="POST">
                     <div class="mb-4">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nome" th:field="*{nome}">
