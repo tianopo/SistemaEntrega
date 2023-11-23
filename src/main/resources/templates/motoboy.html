@@ -27,7 +27,9 @@
             <tbody>
               <tr th:each="motoboy : ${listarMotoboy}">
                 <td>
+                    <a th:href="@{/atualizarMotoboyForm/{id}(id=${motoboy.id})}" class="btn btn-primary">
                         <span th:text="${motoboy.nome}"></span>
+                    </a>
                 </td>
                 <td th:text="${motoboy.cpf}"></td>
                 <td th:text="${motoboy.dataNascimento}"></td>
@@ -36,7 +38,7 @@
                 <td th:text="${motoboy.placa}"></td>
                 <td>
                     <button class="btn btn-danger text-danger">
-                        <a th:href="@{/deletarMotoboy/{id}(id=${motoboy.id})}" class="btn btn-danger">&#x2612;</a>
+                        <a th:href="@{/deletarMotoboy/{id}(id=${motoboy.id})}" class="btn btn-danger">Excluir</a>
                     </button>
                 </td>
               </tr>
@@ -52,7 +54,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" th:action="@{/salvarMotoboy}" th:object="${motoboyAdicionar}" class="d-flex flex-row gap-3 flex-wrap" method="POST">
+                    <form action="#" th:action="@{/salvarMotoboy}" th:object="${motoboy}"class="d-flex flex-row gap-3 flex-wrap" method="POST">
                         <div class="mb-4">
                             <label for="nome" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="nome" th:field="*{nome}">

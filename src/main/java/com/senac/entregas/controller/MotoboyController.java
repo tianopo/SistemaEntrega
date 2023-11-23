@@ -24,7 +24,8 @@ public class MotoboyController {
         //lista os motoboys
         model.addAttribute("listarMotoboy", motoboyService.listarTodosMotoboys());
         //adiciona entidade motoboy
-        model.addAttribute("motoboyAdicionar", new MotoboyEntity());
+        MotoboyEntity motoboy = new MotoboyEntity();
+        model.addAttribute("motoboy", motoboy);
 
         return "index";
     }
@@ -50,9 +51,10 @@ public class MotoboyController {
 
     @GetMapping("/atualizarMotoboyForm/{id}")
     public String atualizarMotoboyForm(@PathVariable(value = "id") Integer id, Model model) {
+        model.addAttribute("pagina", "motoboyAtualizar");
         MotoboyEntity motoboy = motoboyService.getMotoboyId(id);
         model.addAttribute("motoboy", motoboy);
 
-        return "motoboyAtualizar";
+        return "index";
     }
 }

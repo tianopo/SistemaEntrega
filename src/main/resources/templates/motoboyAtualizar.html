@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Motoboy Atualizar</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <main class="mx-5 mt-4 gap-3">
+        <form action="#" th:action="@{/salvarMotoboy}" th:object="${motoboy}"class="d-flex flex-row gap-3 flex-wrap" method="POST">
+            <div class="mb-4">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" th:field="*{nome}">
+                <span class="text-danger" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+            </div>
+            <div class="mb-4">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpf" th:field="*{cpf}">
+                <span class="text-danger" th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"></span>
+            </div>
+            <div class="mb-4">
+                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="dataNascimento" th:field="*{dataNascimento}">
+                <span class="text-danger" th:if="${#fields.hasErrors('dataNascimento')}" th:errors="*{dataNascimento}"></span>
+            </div>
+            <div class="mb-4">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="telefone" th:field="*{telefone}">
+                <span class="text-danger" th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"></span>
+            </div>
+            <div class="mb-4">
+                <label for="moto" class="form-label">Moto</label>
+                <input type="text" class="form-control" id="moto" th:field="*{moto}">
+                <span class="text-danger" th:if="${#fields.hasErrors('moto')}" th:errors="*{moto}"></span>
+            </div>
+            <div class="mb-4">
+                <label for="placa" class="form-label">Placa</label>
+                <input type="text" class="form-control" id="placa" th:field="*{placa}">
+                <span class="text-danger" th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}"></span>
+            </div>
+            <div class="mb-4 d-flex align-items-end gap-3">
+                <button type="button" class="btn btn-secondary">
+                    <a th:href="@{/motoboy}" class="text-decoration-none text-white"><span class="fs-5">&#x21e6;</span> Voltar</a>
+                </button>
+                <button type="submit" class="btn btn-dark p-2">Enviar</button>
+            </div>
+            <input type="hidden" th:field="*{id}" />
+        </form>
+    </main>   
+    <script th:src="@{/js/jquery-3.7.1.js}"></script>
+    <script th:src="@{/js/bootstrap/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/jquery.mask.min.js}"></script>
+    <script th:src="@{/js/motoboyMascara.js}"></script>
+</body>
+</html>
