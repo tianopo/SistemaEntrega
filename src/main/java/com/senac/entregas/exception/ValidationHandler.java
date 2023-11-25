@@ -1,4 +1,4 @@
-package com.senac.salacinema.exception;
+package com.senac.entregas.exception;
 
 import java.util.HashMap; 
 import java.util.Map; 

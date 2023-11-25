@@ -14,7 +14,7 @@ public class EntregasControllerTest {
         PedidoController controller = new PedidoController();
         Model model = new ModelStub();
 
-        String result = controller.home(model);
+        String result = controller.pedido(model);
 
         assertEquals("index", result);
         assertEquals("pedidos", model.getAttribute("pagina"));

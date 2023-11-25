@@ -3,6 +3,7 @@ package com.senac.entregas.service;
 import com.senac.entregas.data.PedidoEntity;
 import com.senac.entregas.data.PedidoRepository;
 import com.senac.entregas.exception.ResourceNotFoundException;
+import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service; 
 import java.util.List;

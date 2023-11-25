@@ -4,12 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 @Entity
@@ -21,6 +20,7 @@ public class PedidoEntity {
     
     @NotBlank(message="Nome de cliente obrigatório")
     private String nome;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date data;
     private String motoboy;
     private String cliente;

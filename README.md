@@ -22,6 +22,7 @@ As tarefas estão sendo implementadas e os recursos estão sendo adicionados gra
 - Spring Boot
 - Lombok
 - Thymeleaf
+- Git
 
 ## Time de desenvolvedores
 
