@@ -49,6 +49,5 @@ Aplicativo que facilite a administração em uma empresa de entregas para propor
 ## Funcionalidades do sistema (requisitos)
 
 - **Agendamento de Entrega**: Permite que os usuários escolham horários de entrega convenientes, proporcionando flexibilidade para atender às suas preferências.
-- **Gerenciamento de Frota e Clientes**: Ajuda a controlar motoristas disponíveis, atribuindo tarefas, monitorando a disponibilidade e otimizando a alocação de recursos.
 - **Comunicação com o Cliente**: Mostra o status da entrega para o cliente.
 - **Contabilização de entregas por requisitos**: Mostra quantidade de entregas do dia, quantas estão em andamento e entregues
