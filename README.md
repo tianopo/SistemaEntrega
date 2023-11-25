@@ -23,6 +23,7 @@ As tarefas estão sendo implementadas e os recursos estão sendo adicionados gra
 - Lombok
 - Thymeleaf
 - Git
+- Bootstrap
 
 ## Time de desenvolvedores
 
